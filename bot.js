@@ -6,7 +6,7 @@ console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client
     client.user.setStatus('idle')
     client.user.setPresence({
         game: {
-            name: 'black people stealing shoes',
+            name: 'One tequila…. two tequila….. three tequila….. floor…..',
             type: "Watching",
             url: "https://discordapp.com/"
         }
