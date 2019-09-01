@@ -30,7 +30,9 @@ client.on('message', message => {
   }
 });
 
-
+client.on('message', message => {
+  // Ignore messages that aren't from a guild
+  if (!message.guild) return;
 
 if (message.content.startsWith('!kick')) {
     const user = message.mentions.users.first();
