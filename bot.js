@@ -31,6 +31,13 @@ client.on('message', message => {
 });
 
 
+client.on('message', message => {
+  if (message.content === '_invite') {
+    message.reply("https://discord.gg/3YfpZrG");
+  }
+});
+
+
 
 client.on('message', message => {
   if (message.content === '_owner') {
@@ -96,6 +103,7 @@ client.on("message", async message => {
         const embed = new Discord.RichEmbed()
             .setAuthor("💬 Command List.")
             .addField(" - Owner" , "Lazyy#9825")
+	    .addField(" - Invite" , "Invites you to my server")
 	    .addField(" - avatar", "Show your Avatar.")
             .addField(" - ping", "Shows Ping.")
 	    .addField(" - say", "Says whatever you tell it to")
