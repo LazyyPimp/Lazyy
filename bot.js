@@ -23,6 +23,13 @@ client.on('message', message => {
   }
 });
 
+
+client.on('message', message => {
+  if (message.content === '_avatar') {
+    message.reply(message.author.avatarURL);
+  }
+});
+
  
 client.on("message", async message => {
     const prefix = "_";
