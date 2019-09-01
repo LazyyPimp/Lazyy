@@ -133,7 +133,7 @@ message.reply(list[rand])
 	client.on("message", (message) => {
     if (message.content.startsWith("$ban")) {
 
-        if (message.member.hasPermission("ADMINISTRATOR") {
+        if (message.member.hasPermission("ADMINISTRATOR")
 
             return;
 
@@ -146,7 +146,6 @@ message.reply(list[rand])
         }).catch(() => {
             // Failmessage
             message.channel.send("Access Denied");
-	}
 		 });
     }
 });
