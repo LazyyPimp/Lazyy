@@ -135,8 +135,6 @@ message.reply(list[rand])
 
         if (message.member.hasPermission("ADMINISTRATOR")
 
-            return;
-
         // Easy way to get member object though mentions.
         var member = message.mentions.members.first();
         // ban
