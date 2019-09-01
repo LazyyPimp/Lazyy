@@ -34,11 +34,6 @@ client.on("message", async message => {
     
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
-
-    
-    
-
-    
     
          if (cmd === "ping") {
         // Send a message
@@ -48,23 +43,6 @@ client.on("message", async message => {
         msg.edit(`🏓 Pong!\nLatency is ${Math.floor(msg.createdTimestap - message.createdTimestap)}ms\nAPI Latency is ${Math.round(client.ping)}ms`);
     }
      
-    if (cmd === "magic") {
-		let msg = "https://media.giphy.com/media/5ftsmLIqktHQA/giphy.gif";
-		msg += "\n Ah ah ah! You didn't say the magic word.";
-		channel.send(msg);
-	}
-	if (cmd === "disco") {
-		const discos = [
-			':beers: :tropical_drink: **P A R T Y** :man_dancing: :cartwheel: ',
-			':palm_tree: :cocktail: **P A R T Y** :slot_machine: :lifter: ',
-			':handball: :dancer:  **P A R T Y** :beer: :100: '
-		];
-		let n = Math.floor(Math.random() * (discos.length - 1)) + 1;
-		channel.send( discos[n] );
-		message.delete(250).then(msg => console.log(`Deleted message from ${msg.author.username}: ${msg.content}`)).catch(console.error);
-		pointsReward = 2;
-
-  }
 
     if (cmd === "say") {
         // Check if you can delete the message
