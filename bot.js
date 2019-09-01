@@ -50,6 +50,17 @@ client.on("message", async message => {
         msg.edit(`🏓 Pong!\nLatency is ${Math.floor(msg.createdTimestap - message.createdTimestap)}ms\nAPI Latency is ${Math.round(client.ping)}ms`);
     }
 	
+	if(cmd === "prune") {
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply("**🔒 Sorry, you can't do that.**");
+        var messagesToDelete = args[1];
+        if (!args[1]) return message.channel.send("❌ Please include the amount of Message that you want to **Prune**!");
+        if (args[1] > 99) return message.channel.send("❌ I can't **Prune** more than `99` Messages.");
+        message.channel.fetchMessages({limit: messagesToDelete})
+        .then(messages => message.channel.bulkDelete(messages.size + 1))
+        .catch(error => message.channel.send(`❌ Sorry ${message.author}, Failed while **Prunning** because: *${error}*.`));
+    };
+
+	
 	if (cmd === "say") {
         // Check if you can delete the message
         if (message.deletable) message.delete();
