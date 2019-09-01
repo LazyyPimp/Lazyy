@@ -31,6 +31,14 @@ client.on('message', message => {
 });
 
 
+
+client.on('message', message => {
+  if (message.content === '_owner') {
+    message.reply("Lazyy#9825");
+  }
+});
+
+
  
 client.on("message", async message => {
     const prefix = "_";
