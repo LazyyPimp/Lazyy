@@ -134,6 +134,8 @@ message.reply(list[rand])
 	if (cmd === "help") {
         const embed = new Discord.RichEmbed()
             .setAuthor("💬 Command List.")
+	    .addField(" - 8ball", "8ball game")
+	    .addField(" - serverinfo" , "Gives the current server info")
             .addField(" - Owner" , "Lazyy#9825")
 	    .addField(" - Invite" , "Invites you to my server")
 	    .addField(" - avatar", "Show your Avatar.")
