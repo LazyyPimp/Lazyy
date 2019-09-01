@@ -31,14 +31,6 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
-    if (message.content.startsWith('_dm ') && message.mentions.users.size) {
-        var v=message.toString().split(' ').shift().shift().join(' ') // Takes the DM content from the message
-        var member=message.mentions.users[0] // The mentioned user
-        member.send(v) // send that user a DM
-    }
-})
-
  
 client.on("message", async message => {
     const prefix = "_";
@@ -95,7 +87,8 @@ client.on("message", async message => {
 	if (cmd === "help") {
         const embed = new Discord.RichEmbed()
             .setAuthor("💬 Command List.")
-            .addField(" - avatar", "Show your Avatar.")
+            .addField(" - Owner" , "Lazyy#9825")
+	    .addField(" - avatar", "Show your Avatar.")
             .addField(" - ping", "Shows Ping.")
 	    .addField(" - say", "Says whatever you tell it to")
             .addField(" - prune", "Prune up to `99` Messages.")
