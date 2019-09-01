@@ -1,12 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on("ready", () => {
-  // This event will run if the bot starts, and logs in, successfully.
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-  // Example of changing the bot's playing game to something useful. `client.user` is what the
-  // docs refer to as the "ClientUser".
-  client.user.setActivity(`Serving ${client.guilds.size} servers`);
+client.on('ready', () => {
+console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client.channels.size}` + ' channels of ' + `${client.guilds.size}` + ' guilds.');
+    client.user.setStatus('online')
+    client.user.setPresence({
+        game: {
+            name: 'furry killer 2',
+            type: "Playing",
+            url: "https://discordapp.com/"
+        }
+    });
 });
     
 
