@@ -6,15 +6,15 @@ console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client
     client.user.setStatus('online')
     client.user.setPresence({
         game: {
-            name: 'furry killer 2',
-            type: "Playing",
+            name: 'black people stealing shoes',
+            type: "Watching",
             url: "https://discordapp.com/"
         }
     });
 });
 
 
-bot.on('message', message => {
+client.on('message', message => {
   if (message.channel.id === "617439007386894339") {
     message.react('☑')
       .then(() => {
