@@ -27,19 +27,10 @@ client.on("message", async message => {
 
     
     
-    bot.on('message', msg => {
-    let x = Math.floor(Math.random() * 10) + 1;
-let y = Math.floor(Math.random() * 10) + 1;
-if(x === y) {
-msg.react("🤔");
-} 
+
     
     
-    
-    
-    
-    
-    if (cmd === "ping") {
+         if (cmd === "ping") {
         // Send a message
         const msg = await message.channel.send(`🏓 Pinging....`);
 
