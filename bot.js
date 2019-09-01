@@ -166,7 +166,7 @@ message.reply(list[rand])
                 .setImage(client.user.displayAvatarURL)
                 .setAuthor(message.author.username, message.author.displayAvatarURL);
 
-            message.channel.send(embed);
+            message.channel.send({embed});
         } else {
             message.channel.send(args.join(" "));
         }
