@@ -14,6 +14,10 @@ console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client
 });
 
 
+if (message.content === '!react') {
+	message.react('👀');
+}
+
 client.on('message', message => {
   if (message.channel.id === "617772883212500992") {
     message.react('☑')
