@@ -40,7 +40,7 @@ if (amount < 1) return msg.reply('You have to delete at least 1 message!'); // C
 await msg.channel.messages.fetch({ limit: amount }).then(messages => { // Fetches the messages
     msg.channel.bulkDelete(messages) // Bulk deletes all messages that have been fetched and are not older than 14 days (due to the Discord API)
                        
-                           }
+                           })
     
     
     
