@@ -84,7 +84,7 @@ client.on("message", async message => {
 	
 	
 	if (cmd === "help") {
-        var embedhelpmember = new Discord.RichEmbed()
+        const embed = new Discord.RichEmbed()
             .setAuthor("💬 Command List.")
             .addField(" - avatar", "Show your Avatar.")
             .addField(" - ping", "Shows Ping.")
@@ -93,7 +93,7 @@ client.on("message", async message => {
             .addField(" - kick", "Kick someone from your Server.")
             .setColor(0x00FFEE)
             .setFooter("Lazyy", client.user.displayAvatarURL);
-            message.channel.send(embedhelpmember)
+            message.channel.send({embed})
     };
 
 
