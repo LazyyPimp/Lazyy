@@ -23,15 +23,6 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
-    if (message.content === 'no') {
-        // Create the attachment using Attachment
-        const attachment = new Attachment('https://images-ext-2.discordapp.net/external/-AzJYduTJukWsXKFUefd3u3C0HifsWuF1GZI7AqSsQY/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/531917249418625044/544a0c609ae87e1a1de7060e0085d82b.png');
-        // Send the attachment in the message channel
-        message.channel.send(attachment);
-    }
-});
-
 
 client.on('message', message => {
   if (message.content === '_avatar') {
