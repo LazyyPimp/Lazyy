@@ -58,39 +58,6 @@ client.on("message", async message => {
         // Edit the message
         msg.edit(`🏓 Pong!\nLatency is ${Math.floor(msg.createdTimestap - message.createdTimestap)}ms\nAPI Latency is ${Math.round(client.ping)}ms`);
     }
-     
-client.on('message', message => {
-  // Ignore messages that aren't from a guild
-  if (!message.guild) return;
-
-if (message.content.startsWith('_kick')) {
-    const user = message.mentions.users.first();
-    // If we have a user mentioned
-    if (user) {
-      const member = message.guild.member(user);
-      // If the member is in the guild
-      if (member) {
-
-        member.kick('Optional reason that will display in the audit logs').then(() => {
-          // We let the message author know we were able to kick the person
-          message.reply(`Successfully kicked ${user.tag}`);
-        }).catch(err => {
-		
-          message.reply('I was unable to kick the member');
-          // Log the error
-          console.error(err);
-        });
-      } else {
-        // The mentioned user isn't in this guild
-        message.reply('That user isn\'t in this guild!');
-      }
-    // Otherwise, if no user was mentioned
-    } else {
-      message.reply('You didn\'t mention the user to kick!');
-    }
-  };
-	
-	
 	
 	if (cmd === "say") {
         // Check if you can delete the message
