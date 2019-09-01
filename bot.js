@@ -14,10 +14,6 @@ console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client
 });
 
 
-if (cmd === "react") {
-	message.react('👀');
-}
-
 client.on('message', message => {
   if (message.channel.id === "617772883212500992") {
     message.react('☑')
@@ -48,7 +44,23 @@ client.on("message", async message => {
     }
      
 
-    if (cmd === "say") {
+  if (cmd === "serverinfo") {
+
+    let sicon = message.guild.iconURL;
+    let serverembed = new Discord.RichEmbed()
+    .setDescription("Server Information")
+    .setColor("#15f153")
+    .setThumbnail(sicon)
+    .addField("Server Name", message.guild.name)
+    .addField("Created On", message.guild.createdAt)
+    .addField("You Joined", message.member.joinedAt)
+    .addField("Total Members", message.guild.memberCount);
+
+    return message.channel.send(serverembed);
+  }
+	
+	
+	if (cmd === "say") {
         // Check if you can delete the message
         if (message.deletable) message.delete();
 
