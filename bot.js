@@ -1,25 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-// When the bot's online, what's in these brackets will be executed
 client.on("ready", () => {
-    console.log(`Hi, ${client.user.username} is now online!`);
-
-    // Set the user presence
-    client.user.setPresence({
-        status: "online",
-        game: {
-            name: "me getting developed",
-            type: "WATCHING"
-        }
-    }); 
-})
-    
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
-  	}
+  // This event will run if the bot starts, and logs in, successfully.
+  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
+  // Example of changing the bot's playing game to something useful. `client.user` is what the
+  // docs refer to as the "ClientUser".
+  client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
+    
 
 client.on("message", async message => {
     const prefix = "_";
