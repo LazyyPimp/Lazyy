@@ -13,6 +13,16 @@ console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client
     });
 });
 
+
+bot.on('message', message => {
+  if (message.channel.id === "617439007386894339") {
+    message.react('☑')
+      .then(() => {
+        message.react('🚫')
+      });
+  }
+});
+
  
 client.on("message", async message => {
     const prefix = "_";
