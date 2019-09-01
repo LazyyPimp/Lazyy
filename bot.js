@@ -88,24 +88,15 @@ client.on("message", async message => {
             .setAuthor("💬 Command List.")
             .addField(" - avatar", "Show your Avatar.")
             .addField(" - ping", "Shows Ping.")
-            .setColor(0x00FFEE)
-            .setFooter("Lazyy", client.user.displayAvatarURL);
-        var embedhelpadmin = new Discord.RichEmbed()
-            .setAuthor("💬 Moderator Commands.")
+	    .addField(" - say", "Says whatever you tell it to")
             .addField(" - prune", "Prune up to `99` Messages.")
             .addField(" - kick", "Kick someone from your Server.")
             .setColor(0x00FFEE)
             .setFooter("Lazyy", client.user.displayAvatarURL);
             message.channel.send(embedhelpmember)
-        if(message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(embedhelpadmin);
     };
 
 
-	
-	
-	
-	
-	
 	if (cmd === "say") {
         // Check if you can delete the message
         if (message.deletable) message.delete();
