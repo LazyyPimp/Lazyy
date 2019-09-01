@@ -130,6 +130,55 @@ message.reply(list[rand])
         adminlog.send(kickEmbed);
     };
 	
+	if (cmd === "botinfo") {
+	const embed = {
+  "title": "My bot was made in late August, 2019",
+  "description": "It is a moderation and fun bot!",
+  "url": "https://discordapp.com",
+  "color": 16500163,
+  "footer": {
+    "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+    "text": "Lazyy"
+  },
+  "thumbnail": {
+    "url": "https://cdn.discordapp.com/avatars/556652490733387786/9c840961e0f5a5da91a0bd7b782ab1f9.png?size=2048"
+  },
+  "image": {
+    "url": "https://cdn.discordapp.com/avatars/556652490733387786/9c840961e0f5a5da91a0bd7b782ab1f9.png?size=2048"
+  },
+  "author": {
+    "name": "Made by Lazyy#9825",
+    "url": "https://discordapp.com",
+    "icon_url": "https://cdn.discordapp.com/avatars/556652490733387786/9c840961e0f5a5da91a0bd7b782ab1f9.png?size=2048"
+  },
+  "fields": [
+    {
+      "name": "🤔",
+      "value": "The bot is going to be upgrading throughout time."
+    },
+    {
+      "name": "😱",
+      "value": "see my friends streams at https://www.twitch.tv/piratiersonline"
+    },
+    {
+      "name": "🙄",
+      "value": "Join the server I am on https://discord.gg/3YfpZrG"
+    },
+    {
+      "name": "<:thonkang:219069250692841473>",
+      "value": "Yeet",
+      "inline": true
+    },
+    {
+      "name": "<:thonkang:219069250692841473>",
+      "value": "Yote",
+      "inline": true
+    }
+  ]
+};
+channel.send("Hello, I am Lazyy.", { embed });
+	}
+	
 	
 	if (cmd === "help") {
         const embed = new Discord.RichEmbed()
