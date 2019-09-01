@@ -176,7 +176,7 @@ message.reply(list[rand])
     }
   ]
 };
-channel.send("Hello, I am Lazyy.", { embed });
+message.channel.send({embed});
 	}
 	
 	
