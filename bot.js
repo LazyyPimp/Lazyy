@@ -14,7 +14,7 @@ console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client
 });
 
 
-if (message.content === '!react') {
+if (cmd === "react") {
 	message.react('👀');
 }
 
