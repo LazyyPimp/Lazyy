@@ -165,12 +165,12 @@ message.reply(list[rand])
       "value": "Join the server I am on https://discord.gg/3YfpZrG"
     },
     {
-      "name": "<:thonkang:219069250692841473>",
+      "name": "🥴",
       "value": "Yeet",
       "inline": true
     },
     {
-      "name": "<:thonkang:219069250692841473>",
+      "name": "🥴",
       "value": "Yote",
       "inline": true
     }
