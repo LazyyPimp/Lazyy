@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
 console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client.channels.size}` + ' channels of ' + `${client.guilds.size}` + ' guilds.');
-    client.user.setStatus('online')
+    client.user.setStatus('idle')
     client.user.setPresence({
         game: {
             name: 'black people stealing shoes',
@@ -15,7 +15,7 @@ console.log('Bot: Hosting ' + `${client.users.size}` + ' users, in ' + `${client
 
 
 client.on('message', message => {
-  if (message.channel.id === "617439007386894339") {
+  if (message.channel.id === "617772883212500992") {
     message.react('☑')
       .then(() => {
         message.react('🚫')
