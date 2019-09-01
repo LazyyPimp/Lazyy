@@ -146,7 +146,7 @@ message.reply(list[rand])
             message.channel.send({embed})
     };
 	
-	if (cmd === "server info") {
+	if (cmd === "serverinfo") {
 	    const embed = new Discord.RichEmbed()
         .setAuthor(message.guild.name, message.guild.iconURL)
         .addField("Name", message.guild.name, true)
