@@ -133,7 +133,7 @@ message.reply(list[rand])
 	
 	
 	
-	if(cmd === "ban) {const args = message.content.split(' ').slice(1); // All arguments behind the command name with the prefix
+	if(cmd === "ban") {const args = message.content.split(' ').slice(1); // All arguments behind the command name with the prefix
 ​
 const user = message.mentions.users.first(); // returns the user object if an user mention exists
 const banReason = args.slice(1).join(' '); // Reason of the ban (Everything behind the mention)
