@@ -47,6 +47,11 @@ client.on("message", async message => {
         // Edit the message
         msg.edit(`🏓 Pong!\nLatency is ${Math.floor(msg.createdTimestap - message.createdTimestap)}ms\nAPI Latency is ${Math.round(client.ping)}ms`);
     }
+    
+    const swearWords = ["nigger", "no", "lazyy", "hello"];
+if( swearWords.some(word => message.content.includes(word)) ) {
+  message.delete();
+}
 
     if (cmd === "say") {
         // Check if you can delete the message
