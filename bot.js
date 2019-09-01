@@ -194,7 +194,7 @@ message.channel.send({embed});
             .addField(" - kick", "Kick someone from your Server.")
             .setColor(0x00FFEE)
             .setFooter("Lazyy", client.user.displayAvatarURL);
-            client.whisper({embed})
+            message.channel.send({embed})
     };
 	
 	if (cmd === "serverinfo") {
