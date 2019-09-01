@@ -57,8 +57,7 @@ if (message.content.startsWith('!kick')) {
     } else {
       message.reply('You didn\'t mention the user to kick!');
     }
-  }
-});
+  };
 
 
  
