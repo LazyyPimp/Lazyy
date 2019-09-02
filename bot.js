@@ -196,7 +196,7 @@ message.channel.send({embed});
 	
 	
 	
-	if(cmd === "report"){
+	if(cmd === "report") {
 
 let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let reason = args.slice(1).join(' ');
@@ -217,7 +217,7 @@ let target = message.guild.member(message.mentions.users.first() || message.guil
         .addField('Reported Reason', reason)
         .setFooter('Reported user imformation', target.user.displayAvatarURL);
 	
-	message.channel.send({embed:embed1});
+	message.channel.send({embed});
     	message.delete().catch(O_o=>{});
     };
 
