@@ -25,7 +25,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if (message.content === '_avatar') {
+  if (message.content === '.avatar') {
     message.reply(message.author.avatarURL);
   }
 });
@@ -40,7 +40,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if (message.content === '_owner') {
+  if (message.content === '.owner') {
     message.reply("Lazyy#9825");
   }
 });
