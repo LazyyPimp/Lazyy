@@ -200,14 +200,15 @@ message.channel.send({embed});
 
 let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let reason = args.slice(1).join(' ');
-    let reports = message.guild.channels.find(`name`, "reports");
+    let reportschannel = message.guild.channels.find(`name`, "reports");
+    
 
 
     if (!target) return message.reply('please specify a member to report!');
     if (!reason) return message.reply('please specify a reason for this report!');
-    if (!reports) return message.reply(`please create a channel called reports to log the reports!`);
+    if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
 
-    let embed = new Discord.RichEmbed()
+    let reportembed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(target.user.avatarURL)
         .addField('Reported Member', `${target.user.username} with an ID: ${target.user.id}`)
@@ -218,7 +219,7 @@ let target = message.guild.member(message.mentions.users.first() || message.guil
         .setFooter('Reported user imformation', target.user.displayAvatarURL);
 
     message.channel.send(`${target} was reported by ${message.author} for ${reason}`).then(msg => msg.delete(2000));
-    reports.send(embed);
+    reportschannel.send(reportembed);
 
 };
 
