@@ -217,9 +217,11 @@ let target = message.guild.member(message.mentions.users.first() || message.guil
         .addField('Reported In', message.channel)
         .addField('Reported Reason', reason)
         .setFooter('Reported user imformation', target.user.displayAvatarURL);
-
-    message.delete().catch(O_o=>{});
-    reportschannel.send(reportembed);
+	
+	message.channel.send
+    	
+	message.delete().catch(O_o=>{});
+    
 
 };
 
