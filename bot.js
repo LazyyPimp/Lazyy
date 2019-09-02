@@ -202,7 +202,7 @@ message.channel.send({embed});
     if(!rUser) return message.channel.send("Couldn't find user.");
     let rreason = args.join(" ").slice(22);
 
-    let reportEmbed = new Discord.RichEmbed()
+    const reportEmbed = new Discord.RichEmbed()
     .setDescription("Reports")
     .setColor("#15f153")
     .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
