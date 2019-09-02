@@ -223,7 +223,7 @@ message.channel.send({embed});
 	 const embed = new Discord.RichEmbed()
         .setTitle(`${message.guild.name} Server Info`)
     .setColor(0x00FFFF)
-    .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
+    .setFooter(`Requested by ${message.author.tag}`)
     .setThumbnail(message.guild.iconURL)
     .addField('Member Count', Client.formatNum(message.guild.memberCount), true)
     .addField('Owner', message.guild.owner.user.tag, true)
