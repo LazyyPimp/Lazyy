@@ -220,7 +220,6 @@ let rUser = message.guild.member(message.mentions.users.first() || message.guild
 
     return;
   }
-    };
 
 	
 	if (cmd === "help") {
