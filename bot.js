@@ -206,7 +206,7 @@ let target = message.guild.member(message.mentions.users.first() || message.guil
     if (!reason) return message.reply('please specify a reason for this report!');
     if (!reports) return message.reply(`please create a channel called reports to log the reports!`);
 
-    let embed = new discord.RichEmbed()
+    let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(target.user.avatarURL)
         .addField('Reported Member', `${target.user.username} with an ID: ${target.user.id}`)
