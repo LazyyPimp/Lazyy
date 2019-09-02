@@ -197,30 +197,29 @@ message.channel.send({embed});
 	
 	
 	if(cmd === "report") {
+		
+    let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let reason = args.slice(1).join(' ');
+    let reports = message.guild.channels.find('name', "reports");
 
-let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return message.channel.send("Couldn't find user.");
-    let rreason = args.join(" ").slice(22);
+    if (!target) return message.reply('please specify a member to report!');
+    if (!reason) return message.reply('please specify a reason for this report!');
+    if (!reports) return message.reply(`please create a channel called "reports" to log the reports!`);
 
-    let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Reports")
-    .setColor("#15f153")
-    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
-    .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
-    .addField("Channel", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", rreason);
+    let embed = new discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(target.user.avatarURL)
+        .addField('Reported Member', `${target.user.username} with an ID: ${target.user.id}`)
+        .addField('Reported By', `${message.author.username} with an ID: ${message.author.id}`)
+        .addField('Reported Time', message.createdAt)
+        .addField('Reported In', message.channel)
+        .addField('Reported Reason', reason)
+        .setFooter('Reported user imformation', target.user.displayAvatarURL);
 
-    let reportschannel = message.guild.channels.find(`name`, "reports");
-    if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
+    message.channel.send(`${target} was reported by ${message.author} for ${reason}`).then(msg => msg.delete(2000));
+    reports.send(embed);
 
-
-    message.delete().catch(O_o=>{});
-    reportschannel.send(reportEmbed);
-
-    return;
-  }
-
+};
 	
 	if (cmd === "help") {
         const embed = new Discord.RichEmbed()
