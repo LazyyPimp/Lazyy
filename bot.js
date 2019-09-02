@@ -200,7 +200,8 @@ message.channel.send({embed});
 
 let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let reason = args.slice(1).join(' ');
-    let reports = message.guild.channels.find('name', "reports");
+    let reports = message.guild.channels.find(`name`, "reports");
+
 
     if (!target) return message.reply('please specify a member to report!');
     if (!reason) return message.reply('please specify a reason for this report!');
