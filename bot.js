@@ -218,7 +218,7 @@ let target = message.guild.member(message.mentions.users.first() || message.guil
         .addField('Reported Reason', reason)
         .setFooter('Reported user imformation', target.user.displayAvatarURL);
 
-    message.channel.send(`${target} was reported by ${message.author} for ${reason}`).then(msg => msg.delete(2000));
+    message.delete().catch(O_o=>{});
     reportschannel.send(reportembed);
 
 };
