@@ -195,32 +195,6 @@ message.channel.send({embed});
 	}
 	
 	
-	
-	if(cmd === "report") {
-		
-    let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    let reason = args.slice(1).join(' ');
-    let reports = message.guild.channels.find('name', "reports");
-
-    if (!target) return message.reply('please specify a member to report!');
-    if (!reason) return message.reply('please specify a reason for this report!');
-    if (!reports) return message.reply(`please create a channel called "reports" to log the reports!`);
-
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(target.user.avatarURL)
-        .addField('Reported Member', `${target.user.username} with an ID: ${target.user.id}`)
-        .addField('Reported By', `${message.author.username} with an ID: ${message.author.id}`)
-        .addField('Reported Time', message.createdAt)
-        .addField('Reported In', message.channel)
-        .addField('Reported Reason', reason)
-        .setFooter('Reported user imformation', target.user.displayAvatarURL);
-
-    message.delete().catch(O_o=>{});
-    reports.send(embed);
-
-};
-	
 	if (cmd === "help") {
         const embed = new Discord.RichEmbed()
             .setAuthor("💬 Command List.")
@@ -247,16 +221,17 @@ message.channel.send({embed});
     };
     let verifLevels = ["None", "Low", "Medium", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"];
 	 const embed = new Discord.RichEmbed()
-        .setAuthor(message.guild.name, message.guild.iconURL)
-        .addField("Name", message.guild.name, true)
-        .addField("ID", message.guild.id, true)
-        .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
-        .addField("Total | Humans | Bots", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`, true)
-        .addField("Verification Level", verifLevels[message.guild.verificationLevel], true)
-        .addField("Channels", message.guild.channels.size, true)
-        .addField("Roles", message.guild.roles.size, true)
-        .addField("Creation Date", `${message.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(message.channel.guild.createdAt)})`, true)
-        .setThumbnail(message.guild.iconURL)
+        .setTitle(`${message.guild.name} Server Info`)
+    .setColor(0x00FFFF)
+    .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
+    .setThumbnail(message.guild.iconURL)
+    .addField('Member Count', Client.formatNum(message.guild.memberCount), true)
+    .addField('Owner', message.guild.owner.user.tag, true)
+    .addField('Server Created', Client.dateFormat(message.guild.createdAt, 'mmmm dS, yyyy, h:MM:ss TT'), true)
+    .addField('Role Count', message.guild.roles.size, true)
+    .addField('Channel Count', message.guild.channels.size, true)
+    .addField('Standard Emoji Count', message.guild.emojis.filter(e => !e.animated).size, true)
+    .addField('Animated Emoji Count', message.guild.emojis.filter(e => e.animated).size, true);
     message.channel.send({embed});
 }
 
