@@ -207,7 +207,7 @@ let target = message.guild.member(message.mentions.users.first() || message.guil
     if (!target) return message.reply('please specify a member to report!');
     if (!reason) return message.reply('please specify a reason for this report!');
 
-	const reportembed = new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(target.user.avatarURL)
         .addField('Reported Member', `${target.user.username} with an ID: ${target.user.id}`)
@@ -217,7 +217,7 @@ let target = message.guild.member(message.mentions.users.first() || message.guil
         .addField('Reported Reason', reason)
         .setFooter('Reported user imformation', target.user.displayAvatarURL);
 	
-	message.channel.send({reportembed})
+	message.channel.send({embed:embed1});
     	message.delete().catch(O_o=>{});
     };
 
