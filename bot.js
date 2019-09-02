@@ -216,7 +216,7 @@ message.channel.send({embed});
 
 
     message.delete().catch(O_o=>{});
-    reportschannel.send(reportEmbed);
+    reportschannel.send({reportEmbed});
 
     return;
   }
